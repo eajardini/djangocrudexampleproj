@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{funcionario.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Atualização de funcionário</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Código:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="codigo" id="id_codigo" required maxlength="20" value="{{ funcionario.codigo }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Nome:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="nome" id="id_nome" required maxlength="100" value="{{ funcionario.nome }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">E-mail:</label>  
+    <div class="col-sm-4">  
+        <input type="email" name="email" id="id_email" required maxlength="254" value="{{ funcionario.email }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Contato:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="contato" id="id_contato" required maxlength="15" value="{{ funcionario.contato }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Atualizar</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
